@@ -1,3 +1,7 @@
+<!-- markdownlint-disable -->
+><img src="https://github.com/flhxer703/aws-tailscale-exit-node/blob/main/.github/banner.png?raw=true" alt="Project Banner"/></a><br/>
+<!-- markdownlint-restore -->
+
 # Tailscale Exit Node on AWS
 
 Deploy a single EC2 instance as a Tailscale exit node with a minimal VPC, optional Session Manager access, optional CloudWatch logs, and an optional billing alarm.
@@ -28,14 +32,14 @@ For first-time AWS account setup, see [AWS_ACCOUNT_SETUP.md](AWS_ACCOUNT_SETUP.m
 cp terraform.tfvars.example terraform.tfvars
 ```
 
-2. Edit `terraform.tfvars` and set at least:
+1. Edit `terraform.tfvars` and set at least:
 
 ```hcl
 tailscale_auth_key  = "tskey-auth-XXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 billing_alert_email = "you@example.com" # optional
 ```
 
-3. Deploy:
+1. Deploy:
 
 ```bash
 terraform init
@@ -43,7 +47,7 @@ terraform plan
 terraform apply
 ```
 
-4. Approve the exit node in the Tailscale admin console.
+1. Approve the exit node in the Tailscale admin console.
 
 ## Access
 
