@@ -1,20 +1,16 @@
 #!/bin/bash
 
-# 1. Login
+# 1. Login check
 gh auth status || gh auth login
 
-# 2. Setup Git & Ignore Junk
-git init -b main
-echo ".DS_Store" >> .gitignore
-echo ".terraform/" >> .gitignore
-echo "*.tfstate*" >> .gitignore
+# 2. Git Setup (Silent if already done)
+git init -b main 2>/dev/null
 git add .
 git commit -m "Initial commit"
 
-# 3. Create & Push (Fixed Quotes)
+# 3. Create & Push (Fix: Removed --license flag)
 gh repo create "aws-tailscale-exit-node" \
   --description "Tailscale EC2 Exit Node" \
-  --license apache-2.0 \
   --public \
   --source=. \
   --remote=upstream \
