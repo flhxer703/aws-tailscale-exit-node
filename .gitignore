@@ -3,4 +3,6 @@
 .terraform/
 *.tfvars
 !terraform.tfvars.example
-init.sh
+init.sh.DS_Store
+.terraform/
+*.tfstate*
